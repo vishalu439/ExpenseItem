@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ExpenseForm() {
+function ExpenseForm({Data}) {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
@@ -27,8 +27,8 @@ function ExpenseForm() {
       date: new Date(date),
     };
       newExpense([...expense,expenseData])
-    console.log(expense);
-
+   // console.log(expense);
+      Data(expense)
     // You can use this data to submit the form to a server or add it to a list of expenses
   };
 
