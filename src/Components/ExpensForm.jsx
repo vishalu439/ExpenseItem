@@ -4,6 +4,7 @@ function ExpenseForm() {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
+  const [expense, newExpense] = useState([]);
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
@@ -25,8 +26,8 @@ function ExpenseForm() {
       amount: amount,
       date: new Date(date),
     };
-
-    console.log(expenseData);
+      newExpense([...expense,expenseData])
+    console.log(expense);
 
     // You can use this data to submit the form to a server or add it to a list of expenses
   };
